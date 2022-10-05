@@ -1,0 +1,25 @@
+ALGORITHM SumOfSameElement
+VAR
+    t1 : ARRAY_OF INTEGER[];
+    t2 : ARRAY_OF INTEGER[];
+    ht: HASH_TABLE<integer,integer>;
+    i, j, sum: INTEGER;
+BEGIN
+   sum =0;
+ FOR i FROM 0 TO t1.length-1 DO
+    ht.insert(t1[i],1)
+ END_FOR
+ FOR j FROM 0 TO t2.length-1  DO
+     IF (ht.lookup(t2[j]) = true) THEN
+         ht.insert(t2[j],2);
+      ELSE
+      ht.insert(t2[j],1);
+     END_IF
+ END_FOR
+ FOR i FROM 0 TO t1.length-1  DO
+     IF (ht.get(t1[i])=2) THEN
+         sum:= sum + (t1[i]*2);
+     END_IF
+ END_FOR
+  write('Sum of same elements:',sum);
+END

@@ -1,0 +1,16 @@
+ALGORITHM SumOfSameElement
+VAR 
+    t1: ARRAY_OF INTEGER[];
+    t2: ARRAY_OF INTEGER[];
+    sum, i, j : INTEGER ;
+BEGIN
+    sum := 0 
+    FOR i FROM 0 TO t1.length-1 STEP 1  DO
+        FOR j FROM 0 TO t2.length-1 STEP 1  DO
+            if ((t1[i] = t2[j]) ) THEN 
+            sum:= sum + t1[i]*2
+        END_FOR
+    END_FOR
+
+    Write("Sum of same elements:", sum)
+END
